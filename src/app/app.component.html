@@ -1,0 +1,45 @@
+<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn">
+  <mat-toolbar class="navbar" color="primary">
+    <span class="navbar-brand">E-Commerce DANNA.COM</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
+    <button mat-button routerLink="/signup" routerLinkActive="active">Register</button>
+    <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar class="navbar" color="primary">
+    <span class="navbar-brand">E-Commerce DANNA.COM</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/admin/dashboard" routerLinkActive="active">Principal</button>
+    <button mat-button routerLink="/admin/analytics" routerLinkActive="active">Analitica</button>
+    <button mat-button routerLink="/admin/category" routerLinkActive="active">Categoria</button>
+    <button mat-button routerLink="/admin/product" routerLinkActive="active">Producto</button>
+    <button mat-button routerLink="/admin/orders" routerLinkActive="active">Ordener</button>
+    <button mat-button routerLink="/admin/post-coupon" routerLinkActive="active">Post Coupon</button>
+    <button mat-button routerLink="/admin/coupons" routerLinkActive="active">Cupones</button>
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isCustomerLoggedIn">
+  <mat-toolbar class="navbar" color="primary">
+    <span class="navbar-brand">E-Commerce DANNA.COM</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/customer/dashboard" routerLinkActive="active">Principal</button>
+    <button mat-button routerLink="/customer/cart" routerLinkActive="active">Carrito</button>
+    <button mat-button routerLink="/customer/my_orders" routerLinkActive="active">Ordenes</button>
+    <button mat-button routerLink="/customer/wishlist" routerLinkActive="active">Wishlist</button>
+    <button mat-button routerLink="/customer/profile" routerLinkActive="active">Perfil</button>
+    <button mat-button routerLinkActive="active" (click)="logout()">Logout</button>
+  </mat-toolbar>
+</div>
+
+
+
+<router-outlet></router-outlet>
+<footer class="footer">
+  <p>© 2026 E-Commerce DANNA.COM - Todos los derechos reservados</p>
+  <p>                  Marco Wilson Pineda       Quito - Ecuador</p>
+</footer>
